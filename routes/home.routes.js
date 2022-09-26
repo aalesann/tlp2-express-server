@@ -10,6 +10,7 @@ const {
 } = require('../controllers/home.controllers');
 
 // Definiendo rutas
+router.get('/', getHome);
 router.get('/home', getHome);
 router.get('/home', postHome);
 router.put('/home', putHome);

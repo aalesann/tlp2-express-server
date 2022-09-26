@@ -1,10 +1,15 @@
+const Tasks = require("../models/Tasks");
+
 // Se crea un objeto para añadirle los métodos que se van a exportar
 const ctrlHome = {};
 
 // Se añade la propiedad getHome que es una función que recibe dos parámetros
 // req: request y res: response. Sirven para manejar la petición y la respuesta del servidor
-ctrlHome.getHome =(req, res) => {
-    res.render('index', );
+ctrlHome.getHome = async (req, res) => {
+    const tasks = await Tasks.find({ isActive: true });
+
+
+    res.render('index', { tasks });
 };
 
 ctrlHome.postHome =(req, res) => {

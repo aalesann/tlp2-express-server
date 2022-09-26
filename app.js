@@ -27,6 +27,9 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(helmet());
 
+// Archivos Estáticos
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Motor de plantillas ejs
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
